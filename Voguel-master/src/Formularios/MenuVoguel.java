@@ -16,9 +16,9 @@ public class MenuVoguel extends javax.swing.JFrame {
 
     ArrayList<String> ListProcesos = new ArrayList();
     ArrayList<Integer> ListMultiplicaciones = new ArrayList();
+    ArrayList<Integer> MatrizDatos = new ArrayList();
 
     VentanaResultados Ventana2 = new VentanaResultados();
-
 
     public MenuVoguel() {
         initComponents();
@@ -59,7 +59,7 @@ public class MenuVoguel extends javax.swing.JFrame {
 
         jScrollPane1.setName("tableValues"); // NOI18N
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -139,7 +139,7 @@ public class MenuVoguel extends javax.swing.JFrame {
             }
         });
 
-        TablaProceso.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        TablaProceso.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         TablaProceso.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -209,35 +209,37 @@ public class MenuVoguel extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(177, 177, 177)
-                                .addComponent(BtnAbrir, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtFilas)
-                            .addComponent(BtnVer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnOpciones, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(txtColumnas)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(TxtMensajes, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane2)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(BtnProceso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(BtnResultados, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                            .addComponent(BtnReiniciarProcesos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(BtnReiniciarProcesos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(TxtMensajes, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 405, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(177, 177, 177)
+                                .addComponent(BtnAbrir, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1)
+                                .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtFilas)
+                            .addComponent(BtnVer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnOpciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtColumnas, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -246,23 +248,23 @@ public class MenuVoguel extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(21, 21, 21)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtColumnas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(1, 1, 1)
                         .addComponent(txtFilas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
                         .addComponent(BtnVer, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BtnOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BtnOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtnGuardar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -275,7 +277,7 @@ public class MenuVoguel extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(BtnProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BtnResultados)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BtnReiniciarProcesos)))
@@ -287,52 +289,51 @@ public class MenuVoguel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-      public int[] MezclaDirecta(int []arreglo){
-        int i, j ,k;
-        if(arreglo.length > 1){
-            
-            int nElementosIzq = arreglo.length/2;
+    public int[] MezclaDirecta(int[] arreglo) {
+        int i, j, k;
+        if (arreglo.length > 1) {
+
+            int nElementosIzq = arreglo.length / 2;
             int nElementosDer = arreglo.length - nElementosIzq;
-            int arregloIzq[] = new int [nElementosIzq];
-            int arregloDer[] = new int [nElementosDer];
-            
+            int arregloIzq[] = new int[nElementosIzq];
+            int arregloDer[] = new int[nElementosDer];
+
             //copiando los elementos de parte primera al areglo izquierdo
-            
-            for(i = 0; i < nElementosIzq; i++){
+            for (i = 0; i < nElementosIzq; i++) {
                 arregloIzq[i] = arreglo[i];
             }
-            
-            for(i = nElementosIzq; i < nElementosIzq + nElementosDer; i++){
-                arregloDer[i-nElementosIzq] = arreglo[i];
+
+            for (i = nElementosIzq; i < nElementosIzq + nElementosDer; i++) {
+                arregloDer[i - nElementosIzq] = arreglo[i];
             }
-            
+
             //Recursividad
             arregloIzq = MezclaDirecta(arregloIzq);
             arregloDer = MezclaDirecta(arregloDer);
-            
+
             i = 0;
             j = 0;
             k = 0;
-            
-            while(arregloIzq.length != j && arregloDer.length != k){
-                if(arregloIzq[j] < arregloDer[k]){
+
+            while (arregloIzq.length != j && arregloDer.length != k) {
+                if (arregloIzq[j] < arregloDer[k]) {
                     arreglo[i] = arregloIzq[j];
                     i++;
                     j++;
-                }else{
+                } else {
                     arreglo[i] = arregloDer[k];
                     i++;
                     k++;
                 }
             }
-            
+
             //arreglo final
-            while(arregloIzq.length != j){
+            while (arregloIzq.length != j) {
                 arreglo[i] = arregloIzq[j];
                 i++;
                 j++;
             }
-             while(arregloDer.length != k){
+            while (arregloDer.length != k) {
                 arreglo[i] = arregloDer[k];
                 i++;
                 k++;
@@ -341,11 +342,11 @@ public class MenuVoguel extends javax.swing.JFrame {
         return arreglo;
     }
 
- /*
+    /*
     == BUSCA EL INDICE DE UN DATO DENTRO CUALQUIER ARREGLO, SI NO ENCUENTRA EL
     DATO RETORNA -1.
      */
- public static int GetIndice(int vector[], int dato) {
+    public static int GetIndice(int vector[], int dato) {
         for (int i = 0; i < vector.length; i++) {
             if (vector[i] == dato) {
                 return i;
@@ -354,21 +355,78 @@ public class MenuVoguel extends javax.swing.JFrame {
         return -1;
     }
 
- /*
+    /*
     == GUARDA LOS DATOS EN UNA MATRIZ PARA SU MANIPULACION.
      */
- public void GuardarDatosEnMatriz(int[][] matriz, JTable tabla) {
+    public void GuardarDatosEnMatriz(int[][] matriz, JTable tabla) {
         for (int i = 0; i < tabla.getRowCount(); i++) {
-            for (int x = 0; x < tabla.getColumnCount(); x++) {
-                matriz[i][x] = Integer.parseInt(tabla.getValueAt(i, x).toString());
+            for (int x = 1; x < tabla.getColumnCount(); x++) {
+                matriz[i][x - 1] = Integer.parseInt(tabla.getValueAt(i, x).toString());
             }
         }
     }
 
- /*
+    public void DatosArrayList(JTable tabla) {
+        int c = 0;
+        for (int i = 0; i < tabla.getRowCount(); i++) {
+            for (int x = 1; x < tabla.getColumnCount(); x++) {
+                MatrizDatos.add(Integer.parseInt(tabla.getValueAt(i, x).toString()));
+                //System.out.print(MatrizDatos.get(c) + " ");
+                c++;
+            }
+            //  System.out.println();
+        }
+    }
+
+    public int[][] GuardarDatosEnMatrizConFila(int[][] matriz, JTable tabla, int valor) {
+        int row = tabla.getRowCount() + 1; //
+        int col = tabla.getColumnCount(); //
+        int c = 0;
+        for (int i = 0; i < row; i++) {
+            for (int j = 1; j < col; j++) {
+                if (i == row - 2) {
+                    matriz[i][j - 1] = 0;
+                    //System.out.print(matriz[i][j - 1] + " ");
+
+                } else {
+                    matriz[i][j - 1] = MatrizDatos.get(c);
+                    // System.out.print(matriz[i][j - 1] + " ");
+                    c++;
+                }
+            }
+            // System.out.println();
+        }
+        matriz[row - 2][col - 2] = valor;
+        return matriz;
+    }
+
+    public int[][] GuardarDatosEnMatrizConColumna(int[][] matriz, JTable tabla, int valor) {
+        int row = tabla.getRowCount(); //
+        int col = tabla.getColumnCount() + 1; //
+        int c = 0;
+        for (int i = 0; i < row; i++) {
+            for (int j = 1; j < col; j++) {
+                if (j == col - 2) {
+                    matriz[i][j - 1] = 0;
+                    System.out.print(matriz[i][j - 1] + " ");
+
+                } else {
+                    matriz[i][j - 1] = MatrizDatos.get(c);
+                    System.out.print(matriz[i][j - 1] + " ");
+                    c++;
+                }
+            }
+            System.out.println();
+        }
+        matriz[row - 1][col - 3] = valor;
+        return matriz;
+    }
+
+
+    /*
     == GUARDA LOS DATOS DE LA TABLA EN UN TEXTO MEDIANTE SU ARREGLO CON SUS VALORES.
      */
-  public void GuardarDatosTxt(int[][] matriz) {
+    public void GuardarDatosTxt(int[][] matriz) {
         try {
             JFileChooser file = new JFileChooser();
             file.showSaveDialog(this);
@@ -381,8 +439,8 @@ public class MenuVoguel extends javax.swing.JFrame {
 
 //Escribimos en el archivo con el metodo write 
                 for (int i = 0; i < jTable1.getRowCount(); i++) {
-                    for (int x = 0; x < jTable1.getColumnCount(); x++) {
-                        escribir.write(matriz[i][x] + " ");
+                    for (int x = 1; x < jTable1.getColumnCount(); x++) {
+                        escribir.write(matriz[i][x - 1] + " ");
                     }
                 }
 //Cerramos la conexion
@@ -394,11 +452,11 @@ public class MenuVoguel extends javax.swing.JFrame {
         }
     }
 
- /*
+    /*
     ==ABRE EL ARCHIVO Y A LA VEZ PASA LA INFORMACION EN UN ARREGLO STRING.
      */
- public String[] AbrirArchivo(){
-        String[] parts = new String[jTable1.getRowCount() * jTable1.getColumnCount()];
+    public String[] AbrirArchivo() {
+        String[] parts = new String[jTable1.getRowCount() * jTable1.getColumnCount() - 1];
         try {
             JFileChooser file = new JFileChooser();
             file.showOpenDialog(this);
@@ -421,23 +479,23 @@ public class MenuVoguel extends javax.swing.JFrame {
         return parts;
     }
 
- /*
+    /*
     == LLENA LA TABLA PRINCIPAL CON LOS VALORES DE LA MATRIZ.
      */
- public void LlenarTabla(String[] Datos) {
+    public void LlenarTabla(String[] Datos) {
         int c = 0;
         for (int i = 0; i < jTable1.getRowCount(); i++) {
-            for (int x = 0; x < jTable1.getColumnCount(); x++) {
+            for (int x = 1; x < jTable1.getColumnCount(); x++) {
                 jTable1.setValueAt(Datos[c], i, x);
                 c++;
             }
         }
     }
 
- /*
+    /*
     == DEVUELVE UN ARREGLO DONDE ESTAN ALMACENADOS SOLO LA DISPONIBILIDAD
      */
- public int[] Disponibilidad(JTable tabla) {
+    public int[] Disponibilidad(JTable tabla) {
         int fila = tabla.getRowCount() - 1;
         int col = tabla.getColumnCount() - 1;
         int[] Disp = new int[fila];
@@ -448,24 +506,24 @@ public class MenuVoguel extends javax.swing.JFrame {
         return Disp;
     }
 
- /*
+    /*
     == DEVUELVE UN ARREGLO DONDE ESTAN ALMACENADOS SOLO LA DEMANDA
      */
- public int[] Demanda(JTable tabla) {
+    public int[] Demanda(JTable tabla) {
         int fila = tabla.getRowCount() - 1;
         int col = tabla.getColumnCount() - 1;
-        int[] demanda = new int[col];
+        int[] demanda = new int[col - 1];
 
-        for (int i = 0; i < col; i++) {
-            demanda[i] = Integer.parseInt(tabla.getValueAt(fila, i).toString());
+        for (int i = 1; i < col; i++) {
+            demanda[i - 1] = Integer.parseInt(tabla.getValueAt(fila, i).toString());
         }
         return demanda;
     }
 
- /*
+    /*
     == RETORNA LA MULTA DE LAS FILAS TOMANDO LOS VALORES MAS PEQUEÑOS.
      */
-  public int getMulta(int sortRow[]) {
+    public int getMulta(int sortRow[]) {
         MezclaDirecta(sortRow);
         int dato = 0;
         if (sortRow.length > 1) { //cuando existe mas de un dato en el arreglo
@@ -476,12 +534,12 @@ public class MenuVoguel extends javax.swing.JFrame {
         return dato;
     }
 
- /*
+    /*
      == DEVUELVE UNA MATRIZ CON LAS MULTAS DE LAS FILAS PARA LA DISPONIBILIDAD
      */
- public int[] MultaDisponibilidad(JTable tabla) {
+    public int[] MultaDisponibilidad(JTable tabla) {
         int row = tabla.getRowCount(); //numero de filas
-        int col = tabla.getColumnCount(); //numeros de columnas
+        int col = tabla.getColumnCount() - 1; //numeros de columnas
         int[][] DatosMatriz = new int[row][col]; //crea una matriz dimensional
 
         int[] MultaDisp = new int[tabla.getRowCount() - 1];
@@ -497,31 +555,31 @@ public class MenuVoguel extends javax.swing.JFrame {
         return MultaDisp;
     }
 
- /*
+    /*
      == DEVUELVE UNA MATRIZ CON LAS MULTAS DE LAS COLUMNAS PARA LA DEMANDA
      */
- public int[] MultaDemanda(JTable tabla) {
+    public int[] MultaDemanda(JTable tabla) {
         int row = tabla.getRowCount(); //numero de filas
-        int col = tabla.getColumnCount(); //numeros de columnas
+        int col = tabla.getColumnCount() - 1; //numeros de columnas
         int[][] DatosMatriz = new int[row][col]; //crea una matriz dimensional
 
         int[] MultaDemanda = new int[col - 1];
 
         GuardarDatosEnMatriz(DatosMatriz, tabla); //Los guarda en un la matriz
         int[] Temp = new int[row - 1]; //crea un arreglo temporal para guardar los datos de cada columna
-        for (int i = 0; i < col - 1; i++) {
+        for (int i = 1; i < col; i++) {
             for (int j = 0; j < row - 1; j++) {
-                Temp[j] = DatosMatriz[j][i]; //Almacena los datos de cada columna en Temp
+                Temp[j] = DatosMatriz[j][i - 1]; //Almacena los datos de cada columna en Temp
             }
-            MultaDemanda[i] = getMulta(Temp); //Manda Temp para obtener la multa de cada columna
+            MultaDemanda[i - 1] = getMulta(Temp); //Manda Temp para obtener la multa de cada columna
         }
         return MultaDemanda;
     }
 
- /*
+    /*
      == DEVUELVE LA MULTA MAS GRANDE TOMANDO TANTO DE DEMANDA Y DISPONIBILIDAD
      */
- public int MayorMulta(int[] dispoMulta, int[] demanMultas) {
+    public int MayorMulta(int[] dispoMulta, int[] demanMultas) {
 
         int[] Union = new int[dispoMulta.length + demanMultas.length]; //Crea un arreglo para almacenar todas las multas.
         //Union de las dos arreglo a una sola.
@@ -532,26 +590,26 @@ public class MenuVoguel extends javax.swing.JFrame {
         return Union[Union.length - 1]; //Devuelve el mas Grande
     }
 
- /*
+    /*
      == DEVUELVE EL DATO MAS PEQUEÑO DENTRO DE UN ARREGLO.
      */
-   public int MenorDatos(int[] datos) {
+    public int MenorDatos(int[] datos) {
         MezclaDirecta(datos);
         return datos[0];
     }
 
- /*
+    /*
      == DEVUELVE EL INDICE O POSICION DE LA MULTA MAS GRANDE DETERMINANDO SI ESTA EN 
     DISPONIBILIDAD O DEMANDA, O EN AMBAS
      */
- public int[] BuscarMultaIndices(int[] dispoMultas, int[] demanMultas) {
+    public int[] BuscarMultaIndices(int[] dispoMultas, int[] demanMultas) {
         //Manda la mayor multa junto con el arreglo de MultaDisp y busca su posicion.
         int i = GetIndice(dispoMultas, MayorMulta(dispoMultas, demanMultas)); //disponibilidad
         int j = GetIndice(demanMultas, MayorMulta(dispoMultas, demanMultas)); //demanda
         return new int[]{i, j};
     }
 
- /*
+    /*
      == DETERMINA SI LA MAYOR MULTA ESTA EN DISPONIBILIDAD, DEMANDA O SON EN AMBAS.
      */
     public void Comparacion(int[] demanMultas, int[] dispoMulta, JTable tabla) {
@@ -624,7 +682,7 @@ public class MenuVoguel extends javax.swing.JFrame {
 
             //ACtualizacion de datos
             tabla.setValueAt((Valordisp - ValorDeman), IndDisp, tabla.getColumnCount() - 1);
-            tabla.setValueAt(0, tabla.getRowCount() - 1, IndDeman);
+            tabla.setValueAt(0, tabla.getRowCount() - 1, IndDeman + 1);
 
             EliminacionDeColumnas(IndDeman);
         } else if (ValorDeman > Valordisp) { //si demanda es mas grande, elimina una fila.
@@ -636,7 +694,7 @@ public class MenuVoguel extends javax.swing.JFrame {
 
             //ACtualizacion de datos
             tabla.setValueAt(0, IndDisp, tabla.getColumnCount() - 1);
-            tabla.setValueAt((ValorDeman - Valordisp), tabla.getRowCount() - 1, IndDeman);
+            tabla.setValueAt((ValorDeman - Valordisp), tabla.getRowCount() - 1, IndDeman + 1);
 
             EliminacionDeFilas(IndDisp);
         } else if (ValorDeman == Valordisp) {
@@ -656,24 +714,24 @@ public class MenuVoguel extends javax.swing.JFrame {
     /*
      == RETORNA EL MAS PEQUEÑO DE TODA UNA COLUMNA(DEMANDA) Y SU INDICE
      */
- public int[] Valor_indiceDeman(int Indisp) {
+    public int[] Valor_indiceDeman(int Indisp) {
         int col = TablaProceso.getColumnCount(); //numeros de columnas
-        int[] fila_ordenado = new int[col - 1]; //Para ordenar
-        int[] fila_desor = new int[col - 1]; //para buscar indice
-        for (int i = 0; i < col - 1; i++) {
+        int[] fila_ordenado = new int[col - 2]; //Para ordenar
+        int[] fila_desor = new int[col - 2]; //para buscar indice
+        for (int i = 1; i < col - 1; i++) {
             //copia los valores de la columna a los arreglos.
-            fila_ordenado[i] = Integer.parseInt(TablaProceso.getValueAt(Indisp, i).toString());
-            fila_desor[i] = Integer.parseInt(TablaProceso.getValueAt(Indisp, i).toString());
+            fila_ordenado[i - 1] = Integer.parseInt(TablaProceso.getValueAt(Indisp, i).toString());
+            fila_desor[i - 1] = Integer.parseInt(TablaProceso.getValueAt(Indisp, i).toString());
         }
         int dato = MenorDatos(fila_ordenado); //obtiene el mas pequeño de la columna
         int i = GetIndice(fila_desor, dato); //obtine su indice
         return new int[]{dato, i};
     }
- /*
+
+    /*
      == RETORNA EL MAS PEQUEÑO DE TODA UNA FILA(DISPONIBILIDAD) Y SU INDICE
      */
-
- public int[] Valor_indiceDisp(int IndDeman) {
+    public int[] Valor_indiceDisp(int IndDeman) {
 
         int row = TablaProceso.getRowCount(); //numero de filas
 
@@ -681,8 +739,8 @@ public class MenuVoguel extends javax.swing.JFrame {
         int[] columna_desor = new int[row - 1];
         for (int j = 0; j < row - 1; j++) {
             //copia los valores de la fila a los arreglos.
-            columna_ordenado[j] = Integer.parseInt(TablaProceso.getValueAt(j, IndDeman).toString());
-            columna_desor[j] = Integer.parseInt(TablaProceso.getValueAt(j, IndDeman).toString());
+            columna_ordenado[j] = Integer.parseInt(TablaProceso.getValueAt(j, IndDeman + 1).toString());
+            columna_desor[j] = Integer.parseInt(TablaProceso.getValueAt(j, IndDeman + 1).toString());
         }
         int dato = MenorDatos(columna_ordenado); //obtiene el mas pequeño de las filas
         int i = GetIndice(columna_desor, dato); //retorna su indice del mas pequeño
@@ -690,45 +748,68 @@ public class MenuVoguel extends javax.swing.JFrame {
         return new int[]{dato, i};
     }
 
- /*
+    /*
      == ELIMINA LA FILA(DISPONIBILIDAD)
      */
- public void EliminacionDeFilas(int indiceDisp) {
+    public void EliminacionDeFilas(int indiceDisp) {
         DefaultTableModel tableModel = (DefaultTableModel) TablaProceso.getModel();
         tableModel.removeRow(indiceDisp);
     }
 
- /*
+    /*
      == ELIMINA LA COLUMNA(DEMANDA)
      */
-   public void EliminacionDeColumnas(int indiceDeman) {
+    public void EliminacionDeColumnas(int indiceDeman) {
         DefaultTableModel tableModel = (DefaultTableModel) TablaProceso.getModel();
 
-        TablaProceso.removeColumn(TablaProceso.getColumnModel().getColumn(indiceDeman));
+        TablaProceso.removeColumn(TablaProceso.getColumnModel().getColumn(indiceDeman + 1));
         TablaProceso.setModel(tableModel);
     }
 
- /*
+    /*
      == COPIA LOS DATOS DE LA TABLA ORIGINAL A LA TABLA PROCESO
      */
-    public void Jtables(int[][] matriz, JTable tabla) {
-        DefaultTableModel tableModel = (DefaultTableModel) TablaProceso.getModel();
+    public void Jtables(int[][] matriz, int fila, int columna) {
+        DefaultTableModel copy = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                if (0 == column) {
+                    return false;
+                }
+                if (row == fila - 1 && column == columna - 1) {
+                    return false;
+                }
+                return super.isCellEditable(row, column);
+            }
+        };
 
-        for (int i = 0; i < Integer.parseInt(txtFilas.getText()); i++) {
-            tableModel.addRow(new Object[]{});
+        for (int i = 0; i < fila; i++) {
+            copy.addRow(new Object[]{});
         }
-        for (int i = 0; i < Integer.parseInt(txtColumnas.getText()); i++) {
-            if (i == Integer.parseInt(txtColumnas.getText()) - 1) {
-                tableModel.addColumn("Disponibilidad");
+
+        for (int i = 0; i < columna; i++) {
+            if (i == columna - 1) {
+                copy.addColumn("Oferta");
+            } else if (i >= 1) {
+                copy.addColumn("Costo " + (i));
             } else {
-                tableModel.addColumn("Dato " + (i + 1));
+                copy.addColumn("");
             }
         }
-        for (int i = 0; i < tabla.getRowCount(); i++) {
-            for (int x = 0; x < tabla.getColumnCount(); x++) {
-                TablaProceso.setValueAt(matriz[i][x], i, x);
+
+        for (int i = 0; i < fila; i++) {
+            if (i == fila - 1) {
+                copy.setValueAt("Demanda", i, 0);
+            } else {
+                copy.setValueAt("Costo " + (i + 1), i, 0);
             }
         }
+        for (int i = 0; i < fila; i++) {
+            for (int x = 1; x < columna; x++) {
+                copy.setValueAt(matriz[i][x - 1], i, x);
+            }
+        }
+        TablaProceso.setModel(copy);
     }
 
     /*
@@ -744,6 +825,84 @@ public class MenuVoguel extends javax.swing.JFrame {
         }
         VentanaResultados.ListaDatos.setModel(model);
         VentanaResultados.TextoCostoTotal.setText("Costo Total: " + total);
+    }
+
+    public void NuevaFila_Columna(int sumdeman, int sumdisp, int fila, int columna) {
+        if (sumdeman > sumdisp) {
+            int row = jTable1.getRowCount() + 1; //numero de filas
+            int col = jTable1.getColumnCount() - 1; //numeros de columnas
+
+            int[][] DatosMatriz = new int[row][col]; //crea una matriz dimensional
+            GuardarDatosEnMatrizConFila(DatosMatriz, jTable1, sumdeman - sumdisp); //Los guarda en un la matriz
+            Jtables(DatosMatriz, fila + 1, columna);
+            MatrizDatos.clear();
+        }
+        if (sumdisp > sumdeman) {
+            int row = jTable1.getRowCount(); //numero de filas
+            int col = jTable1.getColumnCount(); //numeros de columnas
+
+            int[][] DatosMatriz = new int[row][col]; //crea una matriz dimensional
+            GuardarDatosEnMatrizConColumna(DatosMatriz, jTable1, sumdisp - sumdeman);
+            Jtables(DatosMatriz, fila, columna + 1);
+            MatrizDatos.clear();
+        }
+
+        if (sumdisp == sumdeman) {
+            int row = jTable1.getRowCount(); //numero de filas
+            int col = jTable1.getColumnCount() - 1; //numeros de columnas
+
+            int[][] DatosMatriz = new int[row][col]; //crea una matriz dimensional
+            GuardarDatosEnMatriz(DatosMatriz, jTable1);
+            Jtables(DatosMatriz, fila, columna);
+        }
+    }
+
+    public void CreacionTablaPrin(int fila, int columna) {
+        try {
+            DefaultTableModel tableModel = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    if (0 == column) {
+                        return false;
+                    }
+                    if (row == fila - 1 && column == columna - 1) {
+                        return false;
+                    }
+                    return super.isCellEditable(row, column);
+                }
+            };
+
+            for (int i = 0; i < fila; i++) {
+                tableModel.addRow(new Object[]{});
+            }
+
+            for (int i = 0; i < columna; i++) {
+                if (i == columna - 1) {
+                    tableModel.addColumn("Oferta");
+                } else if (i >= 1) {
+                    tableModel.addColumn("Costo " + (i));
+                } else {
+                    tableModel.addColumn("");
+                }
+            }
+
+            for (int i = 0; i < fila; i++) {
+                if (i == fila - 1) {
+                    tableModel.setValueAt("Demanda", i, 0);
+                } else {
+                    tableModel.setValueAt("Costo " + (i + 1), i, 0);
+                }
+            }
+
+            tableModel.setValueAt(0, fila - 1, columna - 1);
+
+            jTable1.setModel(tableModel);
+
+            BtnVer.setEnabled(true);
+            BtnOpciones.setEnabled(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Campos vacios");
+        }
     }
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -763,29 +922,10 @@ public class MenuVoguel extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int row = Integer.parseInt(txtFilas.getText()) + 1;
+        int col = Integer.parseInt(txtColumnas.getText()) + 2;
 
-        try {
-            DefaultTableModel tableModel = new DefaultTableModel();
-
-            for (int i = 0; i < Integer.parseInt(txtFilas.getText()); i++) {
-                tableModel.addRow(new Object[]{});
-            }
-
-            for (int i = 0; i < Integer.parseInt(txtColumnas.getText()); i++) {
-                if (i == Integer.parseInt(txtColumnas.getText()) - 1) {
-                    tableModel.addColumn("Disponibilidad");
-                } else {
-                    tableModel.addColumn("Dato " + (i + 1));
-                }
-            }
-
-            jTable1.setModel(tableModel);
-
-            BtnVer.setEnabled(true);
-            BtnOpciones.setEnabled(true);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Campos vacios");
-        }
+        CreacionTablaPrin(row, col);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -795,20 +935,34 @@ public class MenuVoguel extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnVerMouseClicked
 
     private void BtnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerActionPerformed
-        // TODO add your handling code here:
+
         try {
 
-            int row = jTable1.getRowCount(); //numero de filas
-            int col = jTable1.getColumnCount(); //numeros de columnas
-            int[][] DatosMatriz = new int[row][col]; //crea una matriz dimensional
+            DatosArrayList(jTable1);
 
-            GuardarDatosEnMatriz(DatosMatriz, jTable1); //Los guarda en un la matriz
-            Jtables(DatosMatriz, jTable1);
+            int fila = jTable1.getRowCount();
+            int columna = jTable1.getColumnCount();
+
+            int[] demanda = Demanda(jTable1);
+            int[] disponibilidad = Disponibilidad(jTable1);
+
+            int sumdisp = 0;
+            int sumdeman = 0;
+
+            for (int i = 0; i < demanda.length; i++) {
+                sumdeman = sumdeman + demanda[i];
+            }
+            for (int i = 0; i < disponibilidad.length; i++) {
+                sumdisp = sumdisp + disponibilidad[i];
+            }
+            
+            NuevaFila_Columna( sumdeman,  sumdisp,  fila,  columna);
 
             BtnProceso.setEnabled(true); //Activar boton
+
             //Desabilitacion de elementos.
             jButton1.setEnabled(false);
-            BtnVer.setEnabled(false);
+            //BtnVer.setEnabled(false);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Llene todos Los campos para resolver");
         }
@@ -818,7 +972,7 @@ public class MenuVoguel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             int row = jTable1.getRowCount(); //numero de filas
-            int col = jTable1.getColumnCount(); //numeros de columnas
+            int col = jTable1.getColumnCount() - 1; //numeros de columnas
             int[][] DatosMatriz = new int[row][col]; //crea una matriz dimensional
 
             GuardarDatosEnMatriz(DatosMatriz, jTable1); //Los guarda en un la matriz
@@ -830,6 +984,7 @@ public class MenuVoguel extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Llene todos los campos para guardar");
         }
+
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -847,7 +1002,7 @@ public class MenuVoguel extends javax.swing.JFrame {
 
     private void BtnAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAbrirActionPerformed
         // TODO add your handling code here:
-        String[] parts = new String[jTable1.getRowCount() * jTable1.getColumnCount()];
+        String[] parts = new String[jTable1.getRowCount() * jTable1.getColumnCount() - 1];
         //Abre el archivo y pasa los datos a un arreglo.
         parts = AbrirArchivo();
         //Llena la tabla a partir de los datos del arreglo.
@@ -860,6 +1015,7 @@ public class MenuVoguel extends javax.swing.JFrame {
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
         // TODO add your handling code here:
+
         BtnAbrir.setVisible(false);
         BtnGuardar.setVisible(false);
         BtnCancelar.setVisible(false);
@@ -867,7 +1023,7 @@ public class MenuVoguel extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnCancelarActionPerformed
 
     private void BtnProcesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProcesoActionPerformed
-        // TODO add your handling code here:
+
         try {
             int[] dispMulta = MultaDisponibilidad(TablaProceso);
             int[] demanMulta = MultaDemanda(TablaProceso);
